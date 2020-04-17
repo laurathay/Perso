@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant|Marcellus|Monoton|Nothing+You+Could+Do|Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cardo&display=swap&subset=greek,latin-ext');
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+h1{
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+h2{
+  font-family: 'Cormorant', serif;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+h3{
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+p{
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+h5{
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+em{
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+body {
+  color: #435757;
+  font: 1.4em/1 'Noto Sans', sans-serif;
+}
+
+.menu-nav{
+  margin-left: 18em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+.menu-nav a {
+  display:inline-block;
+  text-decoration: none;
+  padding-left: 2em;
+  text-align: justify;
+  font-family: 'Cardo', serif;
+  color: #586F7C;
+}
+
+
+#intro_color{
+  margin-left: 2em;
+  margin-top: 5em;
+  text-align: center;
+}
+
+span.color1, span.color2, span.color3, span.color4 {
+    color: #FFD23F;
+}
+span.color1, span.color2, span.color3, span.color4 {
+    font-size: 5em;
+    line-height: 1em;
+    font-weight: 5em;
+    transition: color 1s;
+    padding: 0;
+}
+
+span.color1:hover{
+	color: pink;
+}
+
+span.color3:hover{
+	color: steelblue;
+}
+
+span.color2:hover{
+	color: #8C271E;
+}
+
+span.color4:hover{
+	color: seagreen;
+}
+
+#intro_color span{
+  display:inline-block;
+}
