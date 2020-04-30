@@ -1,4 +1,5 @@
 h1{
+  color: #F45B69;
   font-family: 'Domine', serif;
   font-size: 70px;
   line-height: 105px;
@@ -70,10 +71,16 @@ h1{
 }
 
 img{
-  margin-top: -20em;
-  margin-left: 38em;
-  width: 50%;
+  width: 40%;
 }
+.dimsum{
+  margin-top: -20em;
+  margin-left: 46em;
+}
+.desert{
+  margin-left: 14.5em;
+}
+
 
 .block img{
   display:block;
