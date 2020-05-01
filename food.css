@@ -82,7 +82,6 @@ img{
 }
 
 .situation{
-  visibility: 0.5;
   margin-left: 46em;
 }
 
@@ -90,24 +89,6 @@ img{
 .block img{
   display:block;
 }
-
-.fadeIn:hover {
- -webkit-animation-name: fadeIn;
- animation-name: fadeIn;
- -webkit-animation-duration: 1s;
- animation-duration: 1s;
- -webkit-animation-fill-mode: both;
- animation-fill-mode: both;
-
- }
- @-webkit-keyframes fadeIn {
- 0% {opacity: 0;}
- 100% {opacity: 1;}
- }
- @keyframes fadeIn {
- 0% {opacity: 0;}
- 100% {opacity: 1;}
- }
 
  .bounce:hover {
   -webkit-animation-name: bounce;
@@ -166,10 +147,4 @@ img{
   }
   90% { -webkit-transform: translate3d(0,-4px,0); transform: translate3d(0,-4px,0);
   }
-}
-
-
-.zoomIn:hover{
-  opacity: 0.5;
-  transition: opacity .3s ease-in-out,visibility .3s ease-in-out;
 }
