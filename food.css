@@ -1,3 +1,6 @@
+* { box-sizing: border-box; }
+body { margin: 0; }
+
 h1{
   color: #F45B69;
   font-family: 'Domine', serif;
@@ -9,7 +12,7 @@ h1{
 }
 
 .portfolio-experiment a {
-  color: pink;
+  color: #003049;
   padding: 0.7em calc(0.7em * 1.2);
   display: inline-block;
   border: 3px solid transparent;
@@ -17,6 +20,7 @@ h1{
   font-size: 1.5em;
   cursor: pointer;
   letter-spacing: 0.07em;
+  font-weight: bold;
 }
 
 .portfolio-experiment a .text {
@@ -33,7 +37,7 @@ h1{
   left: calc(0.7em * 1.2);
   right: calc(0.7em * 1.2);
   height: 3px;
-  background: pink;
+  background: #003049;
   transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
   transform-origin: left;
 }
@@ -71,18 +75,18 @@ h1{
 }
 
 img{
-  width: 40%;
+  width: 50%;
 }
 .dimsum{
-  margin-top: -20em;
-  margin-left: 46em;
+  margin-top: -4em;
+  margin-left: 39.5em;
 }
 .desert{
-  margin-left: 14.5em;
+  margin-left: -0.5em;
 }
 
 .situation{
-  margin-left: 46em;
+  margin-left: 39.5em;
 }
 
 
@@ -147,4 +151,8 @@ img{
   }
   90% { -webkit-transform: translate3d(0,-4px,0); transform: translate3d(0,-4px,0);
   }
+}
+
+.block{
+  background-color: #EAE2B7;
 }
