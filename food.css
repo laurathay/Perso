@@ -76,6 +76,7 @@ h1{
 
 img{
   width: 50%;
+  box-shadow:
 }
 .dimsum{
   margin-top: -4em;
@@ -154,5 +155,17 @@ img{
 }
 
 .block{
-  background-color: #EAE2B7;
+  background-color: #f6f9c2;
+
+}
+
+article {
+    background-image: linear-gradient(
+        to bottom,
+        transparent 50px,
+        #e91e63a3  50px,
+        #e91e63a3 calc(100% - 50px),
+        transparent 0
+    );
+    margin: auto auto 50px auto;
 }
