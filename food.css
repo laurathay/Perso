@@ -79,17 +79,17 @@ img{
   box-shadow:
 }
 .dimsum{
-  margin-top: -4em;
+  margin-top: -2em;
   margin-left: 39.5em;
 }
-.desert{
+.desert, .fooddrinks{
+
   margin-left: -0.5em;
 }
 
 .situation{
   margin-left: 39.5em;
 }
-
 
 .block img{
   display:block;
