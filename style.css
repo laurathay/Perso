@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+html, body {height:100%;margin:0;}
+span {position:fixed;width:100%;text-align:center;background:#fff;}
+a {display:inline-block;vertical-align:top;margin:0 30px;text-decoration:none;font:700 .95em/40px sans-serif;color:#262626;transition:all .4s ease;}
+a:hover {color:#09f;}
+div {height:100%;}
+div+div {background:#235F76;}
+div+div+div {background:#489660;}
+div+div+div+div {background:#7A7971;}
+div+div+div+div+div {background:#6A771F;}
+
 html {
   min-height: 100%;
 }
@@ -16,9 +26,8 @@ h1{
   line-height: 1.5em;
   position: absolute;
   opacity: 0.5;
-  top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
+  top: 235%;
+  left: 47%;
 }
 
 h2{
@@ -48,38 +57,73 @@ body {
   font: 1.4em/1 'Noto Sans', sans-serif;
 }
 
-img{
-  width:112%;
+/* ---------- gallery photos --------- */
+
+.container-gallery {
+  display: grid;
+  grid-template-columns:
+    [left-gallery-start] 35%
+    [main-content-start] 35%
+    [right-sidebar-start] 35%;
+
+  grid-template-rows:
+    [body-start] fr
+    [body-end footer-start] fr
+    [footer-end] fr;
+
+  height: 150vh;
+  grid-gap: 1px;
 }
+
+.container-gallery > * {
+  background-color: #f45b69;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---------- partie blog  --------- */
+
 
 .container {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  position: relative;
+  display: grid;
+  grid-template-columns:
+    [left-gallery-start] 35%
+    [left-gallery-end main-content-start] 35%
+    [main-content-end right-sidebar-start] 35%
+    [right-sidebar-end] 35%;
+
+  grid-template-rows:
+    [body-start] 2fr
+    [body-end footer-start] 2fr
+    [footer-end];
+
+  height: 150vh;
+  grid-gap: 1px;
+}
+
+.container > * {
+  background-color: palegoldenrod;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: white;
 }
 
-.container img{
-  width: 112%;
+.footer {
+  /* Raccourci de grid-column-start et grid-column-end */
+  grid-column: main-content-start / right-sidebar-end;
 }
 
-.menu-nav{
-  margin-left: 9em;
-  padding-top: 1em;
-  padding-bottom: 2em;
+.lsidebar {
+    /* Raccourci de grid-row-start et grid-row-end */
+  grid-row: body-start / footer-end;
 }
 
-.menu-nav a {
-  display:inline-block;
-  text-decoration: none;
-  padding-left: 2em;
-  text-align: justify;
-  font-family: 'Cardo', serif;
-  color: #586F7C;
-}
+
 
 
 #intro_color{
@@ -88,10 +132,10 @@ img{
   text-align: center;
 }
 
-span.color1, span.color2, span.color3, span.color4 {
+strong.color1, strong.color2, strong.color3, strong.color4 {
     color: #FFD23F;
 }
-span.color1, span.color2, span.color3, span.color4 {
+strong.color1, strong.color2, strong.color3, strong.color4 {
     font-size: 5em;
     line-height: 1em;
     font-weight: 5em;
@@ -99,52 +143,125 @@ span.color1, span.color2, span.color3, span.color4 {
     padding: 0;
 }
 
-span.color1:hover{
+strong.color1:hover{
 	color: pink;
 }
 
-span.color3:hover{
+strong.color3:hover{
 	color: steelblue;
 }
 
-span.color2:hover{
+strong.color2:hover{
 	color: #8C271E;
 }
 
-span.color4:hover{
+strong.color4:hover{
 	color: seagreen;
 }
 
-#intro_color span{
+#intro_color strong{
   display:inline-block;
 }
 
 
-/*---------------------------- bootstrap gallery ----------------------------*/
+/* ---------- partie studio  --------- */
 
-img{ max-width:112%;}
 
-.gallery_box li{ width:33.333333%; max-width: 100% ; display:inline-block; float: left; text-align: center; overflow: hidden;    position: relative;}
-.gallery_box{ padding:0;display: flow-root;}
 
-.gallery_box li:hover img {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
+.container-studio {
+  -ms-display: grid;
+  display: grid;
+  grid-gap: 15px; /* Shortcut pour grid-row-gap grid-column-cap */
+  grid-template-areas:
+    "header"
+    "section"
+    "test"
+    "aside-2"
+    "footer";
 }
-.gallery_box li img{-webkit-transition: transform 0.5s ease;
-    -o-transition: transform 0.5s ease;
-    transition: transform 0.5s ease;}
-.gallery_box li:nth-child(even) {
-    height: 304px;
+
+@media (min-width: 700px) {
+  .container-studio {
+    grid-template-areas:
+      "header header header"
+      "test section aside-2"
+      "footer footer footer";
+    /* Définit des zones de grilles nommées */
+    /* https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-areas */
+  }
 }
-.gallery_box li:nth-child(odd) {
-    height: 438px;
+
+/* All Grid Items */
+.container-studio > * {
+  background-color: #ffddd2;
+  font-size: 80px;
+  padding: 10px;
 }
-.gallery_box li:nth-child(odd) .box_data{ background:rgba(0,0,0,0.17) }
-.gallery_box li:nth-child(even) .box_data{ background:rgba(0,44,255,0.27) }
-.gallery_box .box_data{ position:absolute; top: 0; left: 0; right:0; bottom:0; color:#fff;}
-.gallery_box .box_data span{ position:absolute; top: 50%; transform: translateY(-50%); left:0 ; right:0; font-size:24px;}
-.gallery_box li:hover .box_data{ background:rgba(255,0,39,0.55)}
+
+header {
+  /* Associer chaque élément du dom à un endroit dans la grille */
+  grid-area: header;
+}
+
+aside:nth-of-type(1) {
+  grid-area: test;
+}
+
+section {
+  grid-area: section;
+}
+
+aside:nth-of-type(2) {
+  grid-area: aside-2;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* ----------- partie footer ---------- */
+
+.shell {
+  display: grid;
+  grid-template-columns: 0 1fr 0;
+  grid-template-rows: auto 8em 1fr auto;
+}
+
+@media (min-width: 600px) {
+  .shell {
+    grid-template-columns: 20px 1fr 20px;
+  }
+}
+
+/* overlap */
+.shell:before {
+  content: "";
+  grid-column: 1/-1;
+  grid-row: 1/3;
+  background-color: #ff9f9f;
+}
+
+.shell-header {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  color: #FFF;
+  background-color: #ff9f9f;
+  padding: 35px 20px;
+}
+
+.shell-body {
+  grid-row: 2 / 4;
+  grid-column: 2 / 3;
+  min-height: 50vh;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.25);
+  background-color: #FFF;
+}
+
+.shell-footer {
+  grid-column: 2/3;
+  grid-row: -1;
+  padding: 20px;
+}

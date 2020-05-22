@@ -1,14 +1,95 @@
-* { box-sizing: border-box; }
-body { margin: 0; }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #47728e;
+  line-height: 1.2;
+}
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+.wrapper {
+  margin-left: 2em;
+  margin-top: 60px;
+  margin-bottom: 200px;
+}
+.content {
+  margin: 5em;
+  padding: 500px 15px;
+  width: 500px;
+}
+.content h1 {
+  margin-top: 0;
+}
+.content p,
+.sidebar p{
+  font-family: "BLOKKNeue-Regular";
+}
+.sidebar {
+  width: 400px;
+  height: 666px;
+  background-color: #f6f9c2;
+  color: #fff;
+  -webkit-box-shadow: -13px -9px 0px 1px rgba(230,218,230,1);
+  -moz-box-shadow: -13px -9px 0px 1px rgba(230,218,230,1);
+  box-shadow: -13px -9px 0px 1px #f45b69;}
+.sidebar h3 {
+  margin: 0;
+}
+.content,
+.sidebar {
+  float: left;
+}
 
 h1{
   color: #F45B69;
   font-family: 'Domine', serif;
-  font-size: 70px;
+  font-size: 65px;
   line-height: 105px;
   font-weight: 600;
   padding: 0.5em 0.5em;
 
+}
+
+
+/* The sticky */
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+
+img{
+  width:130%;
 }
 
 .portfolio-experiment a {
@@ -72,100 +153,4 @@ h1{
 .portfolio-experiment a:active .line.-bottom {
   transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
   transform-origin: left;
-}
-
-img{
-  width: 50%;
-  box-shadow:
-}
-.dimsum{
-  margin-top: -2em;
-  margin-left: 39.5em;
-}
-.desert, .fooddrinks{
-
-  margin-left: -0.5em;
-}
-
-.situation{
-  margin-left: 39.5em;
-}
-
-.block img{
-  display:block;
-}
-
- .bounce:hover {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-transform-origin: center bottom;
-  -ms-transform-origin: center bottom;
-  transform-origin: center bottom;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  }
-  @-webkit-keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-  -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  }
-  40%, 43% {
-  -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -webkit-transform: translate3d(0, -30px, 0);
-  transform: translate3d(0, -30px, 0);
-  }
-  70% {
-  -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -webkit-transform: translate3d(0, -15px, 0);
-  transform: translate3d(0, -15px, 0);
-  }
-  90% {
-  -webkit-transform: translate3d(0,-4px,0);
-  transform: translate3d(0,-4px,0);
-  }
-  }
-
-  @keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-  -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  }
-  40%, 43% {
-  -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -webkit-transform: translate3d(0, -30px, 0);
-  transform: translate3d(0, -30px, 0);
-  }
-  70% {
-  -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -webkit-transform: translate3d(0, -15px, 0);
-  transform: translate3d(0, -15px, 0);
-  }
-  90% { -webkit-transform: translate3d(0,-4px,0); transform: translate3d(0,-4px,0);
-  }
-}
-
-.block{
-  background-color: #f6f9c2;
-
-}
-
-article {
-    background-image: linear-gradient(
-        to bottom,
-        transparent 50px,
-        #e91e63a3  50px,
-        #e91e63a3 calc(100% - 50px),
-        transparent 0
-    );
-    margin: auto auto 50px auto;
 }
