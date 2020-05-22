@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant|Marcellus|Monoton|Nothing+You+Could+Do|Tenor+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cardo&display=swap&subset=greek,latin-ext');
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Vollkorn&display=swap&subset=cyrillic,cyrillic-ext,greek,latin-ext,vietnamese');
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+/*----------- pour une barre nav smooth----------*/
 
 html, body {height:100%;margin:0;}
 span {position:fixed;width:100%;text-align:center;background:#fff;}
@@ -14,6 +16,10 @@ div+div {background:#235F76;}
 div+div+div {background:#489660;}
 div+div+div+div {background:#7A7971;}
 div+div+div+div+div {background:#6A771F;}
+
+
+
+/*----------- csss générale----------*/
 
 html {
   min-height: 100%;
@@ -26,12 +32,12 @@ h1{
   line-height: 1.5em;
   position: absolute;
   opacity: 0.5;
-  top: 235%;
+  top: 295%;
   left: 47%;
 }
 
 h2{
-  font-family: 'Cormorant', serif;
+  font-family: 'Julius Sans One', sans-serif;
   text-align: justify;
   line-height: 1.5em;
 }
@@ -41,8 +47,7 @@ h3{
 }
 
 p{
-  font-family: 'Tenor Sans', sans-serif;
-}
+font-family: 'Julius Sans One', sans-serif;}
 
 h5{
   font-family: 'Nothing You Could Do', cursive;
@@ -57,7 +62,7 @@ body {
   font: 1.4em/1 'Noto Sans', sans-serif;
 }
 
-/* ---------- gallery photos --------- */
+/* ---------- partie gallery photos --------- */
 
 .container-gallery {
   display: grid;
@@ -173,22 +178,9 @@ strong.color4:hover{
   display: grid;
   grid-gap: 15px; /* Shortcut pour grid-row-gap grid-column-cap */
   grid-template-areas:
-    "header"
-    "section"
-    "test"
-    "aside-2"
-    "footer";
-}
-
-@media (min-width: 700px) {
-  .container-studio {
-    grid-template-areas:
-      "header header header"
-      "test section aside-2"
-      "footer footer footer";
-    /* Définit des zones de grilles nommées */
-    /* https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-areas */
-  }
+  "header header header"
+  "test section aside-2"
+  "footer footer footer";
 }
 
 /* All Grid Items */
@@ -219,7 +211,102 @@ footer {
   grid-area: footer;
 }
 
-/* ----------- partie footer ---------- */
+
+
+/* ---------- partie project --------- */
+
+.container-project {
+  display: grid;
+  grid-template-columns:
+    [left-gallery-start] 50%
+    [left-gallery-end main-content-start] 50%
+    [main-content-end right-sidebar-start] 35%
+
+  grid-template-rows:
+    [body-start] 2fr
+    [body-end footer-start] 2fr
+    [footer-end];
+
+  height: 150vh;
+  grid-gap: 1px;
+}
+
+.container-project > * {
+  background-color: #577590;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer {
+  /* Raccourci de grid-column-start et grid-column-end */
+  grid-column: main-content-start / right-sidebar-end;
+}
+
+.lsidebar {
+    /* Raccourci de grid-row-start et grid-row-end */
+  grid-row: body-start / footer-end;
+
+}
+
+button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #f45e61;
+  color: #f45e61;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+}
+button::before, button::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.draw {
+  transition: color 0.25s;
+}
+.draw::before, .draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  color: #60daaa;
+}
+.draw:hover::before, .draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+/* ----------------------- partie footer ---------------------- */
 
 .shell {
   display: grid;
@@ -238,7 +325,7 @@ footer {
   content: "";
   grid-column: 1/-1;
   grid-row: 1/3;
-  background-color: #ff9f9f;
+  background-color: #ffddd2;
 }
 
 .shell-header {
@@ -246,7 +333,7 @@ footer {
   grid-row: 1 / 2;
 
   color: #FFF;
-  background-color: #ff9f9f;
+  background-color: #ffddd2;
   padding: 35px 20px;
 }
 
