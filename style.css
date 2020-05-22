@@ -11,7 +11,7 @@ html, body {height:100%;margin:0;}
 span {position:fixed;width:100%;text-align:center;background:#fff;}
 a {display:inline-block;vertical-align:top;margin:0 30px;text-decoration:none;font:700 .95em/40px sans-serif;color:#262626;transition:all .4s ease;}
 a:hover {color:#09f;}
-div {height:100%;}
+/*div {height:100%;}*/
 div+div {background:#fff;}
 div+div+div {background:#fff;}
 div+div+div+div {background:#fff;}
@@ -75,9 +75,13 @@ body {
     [body-start] fr
     [body-end footer-start] fr
     [footer-end] fr;
-
+  grid-template-areas:
+  "photo photo photo"
+  "photo photo photo";
   height: 150vh;
   grid-gap: 1px;
+  overflow: hidden;
+
 }
 
 .container-gallery > * {
@@ -86,6 +90,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.photo {
+  grid-area: photo;
+}
+
+.photo>img {
+  object-fit: cover;
+  width: 100%
+}
+
+.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 5px;
+}
+
+.sous-titre {
   text-align: center;
 }
 
