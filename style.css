@@ -66,11 +66,11 @@ body {
 
 .container-gallery {
   display: grid;
- grid-template-columns:
-    [left-gallery-start] 33,33%
-    [main-content-start] 33,33%
-    [right-sidebar-start] 33,33%;
-
+/* grid-template-columns:
+    [left-gallery-start] 33.33%
+    [main-content-start] 33.33%
+    [right-sidebar-start] 33.33%;
+*/
 /* grid-template-rows:
     [body-start] fr
     [body-end footer-start] fr
@@ -103,6 +103,7 @@ object-fit: cover;
 
 .object-fit_contain {
   object-fit: cover;
+  height: 33.33vw;
 }
 
 .photo>img {
