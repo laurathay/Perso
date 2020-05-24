@@ -66,22 +66,25 @@ body {
 
 .container-gallery {
   display: grid;
-  grid-template-columns:
-    [left-gallery-start] 35%
-    [main-content-start] 35%
-    [right-sidebar-start] 35%;
+ grid-template-columns:
+    [left-gallery-start] 33,33%
+    [main-content-start] 33,33%
+    [right-sidebar-start] 33,33%;
 
-  grid-template-rows:
+/* grid-template-rows:
     [body-start] fr
     [body-end footer-start] fr
-    [footer-end] fr;
+    [footer-end] fr;*/
   grid-template-areas:
   "photo photo photo"
   "photo photo photo";
   height: 150vh;
-  grid-gap: 1px;
+/*  grid-gap: 1px;*/
   overflow: hidden;
 
+  grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0; /* px si tu veux que les photos se touchent sans espace*/
+    grid-auto-rows: minmax(200px, auto);
 }
 
 .container-gallery > * {
@@ -94,10 +97,12 @@ body {
 
 .photo {
   grid-area: photo;
+  height: 33.33vw;
+object-fit: cover;
 }
 
 .object-fit_contain {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .photo>img {
@@ -105,12 +110,12 @@ body {
   width: 100%
 }
 
-.polaroid {
-  width: 80%;
+/*.polaroid {
+  width: 100%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 5px;
-}
+}*/
 
 .sous-titre {
   text-align: center;
