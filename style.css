@@ -96,6 +96,10 @@ body {
   grid-area: photo;
 }
 
+.object-fit_contain {
+  object-fit: contain;
+}
+
 .photo>img {
   object-fit: cover;
   width: 100%
