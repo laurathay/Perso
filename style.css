@@ -145,6 +145,14 @@ object-fit: cover;
   text-shadow: grey 2px 2px;
 }
 
+.portfolio-experiment a:nth-child(n+1){
+  left: 2.5em;
+}
+
+.portfolio-experiment .last-child{
+ left: 3.5em;
+}
+
 .portfolio-experiment a .text {
 font-family: 'Quicksand', sans-serif;
   transform: translate3d(0, 0.7em, 0);
