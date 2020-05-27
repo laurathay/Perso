@@ -9,7 +9,7 @@
 
 html, body {height:100%;margin:0;}
 header {position:fixed;width:100%;text-align:center;/*background:#fff;*/}
-a {font-family: 'Bebas Neue', cursive;display:inline-block;vertical-align:top;margin:0 30px;text-decoration:none;font:5 .95em/40px sans-serif;color:#262626;transition:all .4s ease;}
+header a, footer a {font-family: 'Bebas Neue', cursive;display:inline-block;vertical-align:top;margin:0 30px;text-decoration:none;font:5 .95em/40px sans-serif;color:#262626;transition:all .4s ease;}
 a:hover {color:#09f;}
 /*div {height:100%;}*/
 div+div {background:#fff;}
@@ -128,6 +128,72 @@ object-fit: cover;
 
 .sous-titre {
   text-align: center;
+}
+
+/* texte de la gallery */
+
+.portfolio-experiment a {
+  color: #ffddd2;
+  padding: 0.7em calc(0.7em * 1.2);
+  display: inline-block;
+  border: 3px solid transparent;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 0.07em;
+  top: -3em;
+  left: 3.5em;
+  text-shadow: grey 2px 2px;
+}
+
+.portfolio-experiment a .text {
+font-family: 'Quicksand', sans-serif;
+  transform: translate3d(0, 0.7em, 0);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+.portfolio-experiment a:after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: calc(0.7em * 1.2);
+  right: calc(0.7em * 1.2);
+  height: 3px;
+  background: #ffddd2;
+  transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+  transform-origin: left;
+}
+
+.portfolio-experiment .line.-bottom {
+  bottom: -3px;
+  transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+  transform-origin: right;
+}
+
+.portfolio-experiment a:hover .text,
+.portfolio-experiment a:active .text {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+.portfolio-experiment a:hover:after,
+.portfolio-experiment a:active:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+
+.portfolio-experiment a:hover .line,
+.portfolio-experiment a:active .line {
+  transform: scale3d(1, 1, 1);
+}
+
+.portfolio-experiment a:hover .line.-bottom,
+.portfolio-experiment a:active .line.-bottom {
+  transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+  transform-origin: left;
 }
 
 /* ---------- partie blog  --------- */
@@ -448,7 +514,7 @@ footer img{
   text-decoration: none;
 }
 
-a{
+footer a{
   color: pink;
   font-family: 'Quicksand', sans-serif;
 }
