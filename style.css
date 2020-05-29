@@ -32,8 +32,8 @@ h1{
   line-height: 1.5em;
   position: absolute;
   opacity: 0.5;
-  top: 260%;
-  left: 47%;
+  top: 385%;
+  left: 50%;
 }
 
 h2{
@@ -213,17 +213,21 @@ font-family: 'Quicksand', sans-serif;
     [left-gallery-start] 35%
     [left-gallery-end main-content-start] 35%
     [main-content-end right-sidebar-start] 35%
-    [right-sidebar-end] 35%;
-
+    [right-sidebar-end]35%;
   grid-template-rows:
     [body-start] 2fr
     [body-end footer-start] 2fr
-    [footer-end];
+    [footer-end]2fr;
 
   height: 150vh;
-  grid-gap: 1px;
+  grid-gap: 5px;
 }
 
+/*grid-template-areas:
+"photo photo photo"
+grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0; /* px si tu veux que les photos se touchent sans espace*/
+/*  grid-auto-rows: minmax(200px, auto);*/
 .container > * {
   background-color: palegoldenrod;
   font-size: 30px;
@@ -233,16 +237,16 @@ font-family: 'Quicksand', sans-serif;
   text-align: center;
 }
 
-.footer {
+/*.footer {
   /* Raccourci de grid-column-start et grid-column-end */
-  grid-column: main-content-start / right-sidebar-end;
-}
+/*  grid-column: main-content-start / right-sidebar-end;
+}*/
 
-.lsidebar {
+/*.lsidebar {
     /* Raccourci de grid-row-start et grid-row-end */
-  grid-row: body-start / footer-end;
+/*  grid-row: body-start / footer-end;
 }
-
+*/
 
 
 
@@ -358,14 +362,9 @@ footer {
 
 .footer {
   /* Raccourci de grid-column-start et grid-column-end */
-  grid-column: main-content-start / right-sidebar-end;
+  grid-column: main-content-start / right-sidebar-start;
 }
 
-.lsidebar {
-    /* Raccourci de grid-row-start et grid-row-end */
-  grid-row: body-start / footer-end;
-
-}
 
 button {
   background: none;
