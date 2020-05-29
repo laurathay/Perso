@@ -73,15 +73,7 @@ header a{
 
 .container-gallery {
   display: grid;
-/* grid-template-columns:
-    [left-gallery-start] 33.33%
-    [main-content-start] 33.33%
-    [right-sidebar-start] 33.33%;
-*/
-/* grid-template-rows:
-    [body-start] fr
-    [body-end footer-start] fr
-    [footer-end] fr;*/
+
   grid-template-areas:
   "photo photo photo"
   "photo photo photo";
@@ -223,11 +215,6 @@ font-family: 'Quicksand', sans-serif;
   grid-gap: 5px;
 }
 
-/*grid-template-areas:
-"photo photo photo"
-grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0; /* px si tu veux que les photos se touchent sans espace*/
-/*  grid-auto-rows: minmax(200px, auto);*/
 .container > * {
   background-color: palegoldenrod;
   font-size: 30px;
@@ -237,16 +224,7 @@ grid-template-columns: repeat(3, 1fr);
   text-align: center;
 }
 
-/*.footer {
-  /* Raccourci de grid-column-start et grid-column-end */
-/*  grid-column: main-content-start / right-sidebar-end;
-}*/
 
-/*.lsidebar {
-    /* Raccourci de grid-row-start et grid-row-end */
-/*  grid-row: body-start / footer-end;
-}
-*/
 
 
 
@@ -338,17 +316,19 @@ footer {
 .container-project {
   display: grid;
   grid-template-columns:
-    [one-gallery-start] 25%
-    [one-gallery-end two-content-start] 25%
-    [two-content-end three-sidebar-start] 35%
+    [one-gallery-start] 50%
+    [one-gallery-end] 50%;
 
   grid-template-rows:
-    [one-start] 2fr
-    [two-end three-start] 2fr
-    [three-end]2fr;
+    [one-start] 50%
+    [two-end] 50%;
 
   height: 150vh;
   grid-gap: 1px;
+}
+
+.container-project img{
+  height:75vh;
 }
 
 .container-project > * {
