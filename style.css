@@ -338,14 +338,14 @@ footer {
 .container-project {
   display: grid;
   grid-template-columns:
-    [left-gallery-start] 50%
-    [left-gallery-end main-content-start] 50%
-    [main-content-end right-sidebar-start] 35%
+    [one-gallery-start] 25%
+    [one-gallery-end two-content-start] 25%
+    [two-content-end three-sidebar-start] 35%
 
   grid-template-rows:
-    [body-start] 2fr
-    [body-end footer-start] 2fr
-    [footer-end];
+    [one-start] 2fr
+    [two-end three-start] 2fr
+    [three-end]2fr;
 
   height: 150vh;
   grid-gap: 1px;
@@ -362,7 +362,7 @@ footer {
 
 .footer {
   /* Raccourci de grid-column-start et grid-column-end */
-  grid-column: main-content-start / right-sidebar-start;
+  grid-column: two-content-start / three-sidebar-start;
 }
 
 
