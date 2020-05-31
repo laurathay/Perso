@@ -205,17 +205,17 @@ font-family: 'Quicksand', sans-serif;
     [left-gallery-start] 33.33%
     [left-gallery-end main-content-start] 33.33%
     [main-content-end right-sidebar-start] 33.33%;
-  grid-template-rows:
+/*  grid-template-rows:
     [body-start] 2fr
     [body-end footer-start] 2fr
-    [footer-end]2fr;
+    [footer-end]2fr;*/
 
   height: 150vh;
   grid-gap: 30px;
 }
 
 .container > * {
-  background-color: palegoldenrod;
+  /*background-color:*//* palegoldenrod; /*pour la couleur fond décran grid  */
   font-size: 30px;
   display: flex;
   align-items: center;
