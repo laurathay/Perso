@@ -202,17 +202,16 @@ font-family: 'Quicksand', sans-serif;
 .container {
   display: grid;
   grid-template-columns:
-    [left-gallery-start] 35%
-    [left-gallery-end main-content-start] 35%
-    [main-content-end right-sidebar-start] 35%
-    [right-sidebar-end]35%;
+    [left-gallery-start] 33.33%
+    [left-gallery-end main-content-start] 33.33%
+    [main-content-end right-sidebar-start] 33.33%;
   grid-template-rows:
     [body-start] 2fr
     [body-end footer-start] 2fr
     [footer-end]2fr;
 
   height: 150vh;
-  grid-gap: 5px;
+  grid-gap: 30px;
 }
 
 .container > * {
